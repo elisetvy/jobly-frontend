@@ -1,0 +1,17 @@
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid black;
+  font-size: 24px;
+}
+
+.Navbar div a.active {
+  font-weight: 900;
+}
+
+a {
+  margin: 5px;
+  text-decoration: none;
+  color: black
+}
