@@ -1,8 +1,17 @@
+.CompanyCard a {
+  padding: 0;
+  margin: 0;
+}
+
+.CompanyCard a:hover {
+  color: rgba(20, 166, 202, 0.664);
+}
+
 .CompanyCard {
-  margin: 0 auto;
   width: 60vw;
   padding: 5px 10px;
   background: #FFFFFF;
+  margin: 3px auto;
 }
 
 .CompanyCard-detail {
@@ -20,6 +29,6 @@
 }
 
 .CompanyCard p {
-  margin: 0;
+  margin: 4px auto 0;
   text-align: left;
 }

@@ -1,20 +1,23 @@
-import './CompanyCard.css';
+import { Link } from "react-router-dom";
+import "./CompanyCard.css";
 
 function CompanyCard({ company }) {
-  const { name, description, logoUrl } = company;
+  const { name, description, logoUrl, handle } = company;
 
   let isVisible;
-  logoUrl === null ? isVisible = "hidden" : isVisible = "visible";
+  logoUrl === null ? (isVisible = "hidden") : (isVisible = "visible");
 
   return (
     <div className="CompanyCard">
-      <div className="CompanyCard-detail">
-        <h3>{name}</h3>
-        <img src={logoUrl} alt="logo" style={{ visibility: isVisible }} />
-      </div>
-      <p>{description}</p>
+      <Link to={`/companies/${handle}`}>
+        <div className="CompanyCard-detail">
+          <h3>{name}</h3>
+          <img src={logoUrl} alt="logo" style={{ visibility: isVisible }} />
+        </div>
+        <p>{description}</p>
+      </Link>
     </div>
-  )
+  );
 }
 
 export default CompanyCard;
