@@ -1,0 +1,27 @@
+.JobCard {
+  width: 60vw;
+  padding: 10px 20px;
+  background: #FFFFFF;
+  margin: 3px auto;
+  text-align: left;
+}
+
+.JobCard h3 {
+  margin: 0;
+}
+
+.JobCard h4 {
+  margin: 0;
+}
+
+.JobCard-detail {
+  margin-top: 10px;
+}
+
+.JobCard-detail p:first-child {
+  margin-bottom: 5px;
+}
+
+.JobCard-detail p {
+  margin: 0;
+}
