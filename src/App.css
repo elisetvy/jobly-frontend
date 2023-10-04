@@ -1,3 +1,8 @@
 .App {
   text-align: center;
 }
+
+.whiteWithShadow {
+  color: #FFFFFF;
+  text-shadow: 1px 3px 10px black;
+}

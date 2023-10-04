@@ -4,10 +4,12 @@ import "./Searchbar.css";
 function Searchbar({ searchType, search }) {
   const [formData, setFormData] = useState("");
 
+  /**Update state based on change in form input */
   function handleChange(evt) {
     setFormData(evt.target.value);
   }
 
+  /**Invokes search function on form submission */
   function handleSubmit(evt) {
     evt.preventDefault();
     search(formData);

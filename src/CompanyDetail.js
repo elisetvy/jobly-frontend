@@ -14,6 +14,7 @@ function CompanyDetail() {
   const [company, setCompany] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
+  /**Loads company data on intial render.  */
   useEffect(function getCompanyOnRender() {
     async function getCompany() {
       const companyData = await JoblyApi.getCompany(handle);
@@ -25,16 +26,17 @@ function CompanyDetail() {
 
   return (
     <>
-      {isLoading === true
-        ? <p>Loading...</p>
-        : (
-          <>
-            <h3>{company.name}</h3>
-            <p>{company.description}</p>
-            {company.jobs.map(j => <JobCard key={uuid()} job={j} />)}
-          </>
-        )
-      }
+      {isLoading === true ? (
+        <p>Loading...</p>
+      ) : (
+        <>
+          <h3 className="whiteWithShadow">{company.name}</h3>
+          <p className="whiteWithShadow">{company.description}</p>
+          {company.jobs.map((j) => (
+            <JobCard key={uuid()} job={j} />
+          ))}
+        </>
+      )}
     </>
   );
 }

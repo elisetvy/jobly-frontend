@@ -12,6 +12,7 @@ function CompanyList() {
   const [companies, setCompanies] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  /**Loads company data on initial render of the component */
   useEffect(function getCompaniesOnRender() {
     async function getCompanies() {
       const companiesData = await JoblyApi.getCompanies();
@@ -21,6 +22,7 @@ function CompanyList() {
     getCompanies();
   }, []);
 
+  /* Search for companies based on company name and update list on page. */
   async function searchCompanies(searchParam) {
     setIsLoading(true);
     const companiesData = searchParam
@@ -34,7 +36,7 @@ function CompanyList() {
 
   return (
     <>
-      <h1>Companies</h1>
+      <h1 className="whiteWithShadow">Companies</h1>
       <Searchbar searchType={"company"} search={searchCompanies} />
       {isLoading === true ? (
         <p>Loading...</p>
