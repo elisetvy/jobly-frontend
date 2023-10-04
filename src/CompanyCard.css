@@ -1,0 +1,25 @@
+.CompanyCard {
+  margin: 0 auto;
+  width: 60vw;
+  padding: 5px 10px;
+  background: #FFFFFF;
+}
+
+.CompanyCard-detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.CompanyCard h3 {
+  margin: 0;
+}
+
+.CompanyCard img {
+  height: 30px;
+}
+
+.CompanyCard p {
+  margin: 0;
+  text-align: left;
+}

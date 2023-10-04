@@ -49,28 +49,30 @@ class JoblyApi {
   /** Get details on a company by handle. */
 
   static async getCompany(handle) {
-    let res = await this.request(`companies/${handle}`);
+    const res = await this.request(`companies/${handle}`);
     return res.company;
   }
 
   /** Get all companies. */
 
   static async getCompanies() {
-    let res = await this.request(`companies`);
+    const res = await this.request(`companies`);
     return res.companies;
   }
 
   /** Get details on a job by id. */
 
   static async getJob(id) {
-    let res = await this.request(`jobs/${id}`);
+    const res = await this.request(`jobs/${id}`);
     return res.job;
   }
 
     /** Get all jobs. */
 
     static async getJobs() {
-      let res = await this.request(`jobs`);
+      const res = await this.request(`jobs`);
       return res.jobs;
     }
 }
+
+export default JoblyApi;
