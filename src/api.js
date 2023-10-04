@@ -12,7 +12,8 @@ class JoblyApi {
   // Remember, the backend needs to be authorized with a token
   // We're providing a token you can use to interact with the backend API
   // DON'T MODIFY THIS TOKEN
-  static token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZ" +
+  static token =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZ" +
     "SI6InRlc3R1c2VyIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTU5ODE1OTI1OX0." +
     "FtrMwBQwe6Ue-glIFgz_Nf8XxRT2YecFCiSpYL0fCXc";
 
@@ -20,17 +21,13 @@ class JoblyApi {
     const url = new URL(`${BASE_URL}/${endpoint}`);
     const headers = {
       authorization: `Bearer ${JoblyApi.token}`,
-      'content-type': 'application/json',
+      "content-type": "application/json",
     };
 
-    url.search = (method === "GET")
-      ? new URLSearchParams(data).toString()
-      : "";
+    url.search = method === "GET" ? new URLSearchParams(data).toString() : "";
 
     // set to undefined since the body property cannot exist on a GET method
-    const body = (method !== "GET")
-      ? JSON.stringify(data)
-      : undefined;
+    const body = method !== "GET" ? JSON.stringify(data) : undefined;
 
     const resp = await fetch(url, { method, body, headers });
 
@@ -55,8 +52,8 @@ class JoblyApi {
 
   /** Get all companies. */
 
-  static async getCompanies() {
-    const res = await this.request(`companies`);
+  static async getCompanies(searchParams = {}) {
+    const res = await this.request(`companies`, searchParams);
     return res.companies;
   }
 
@@ -67,12 +64,12 @@ class JoblyApi {
     return res.job;
   }
 
-    /** Get all jobs. */
+  /** Get all jobs. */
 
-    static async getJobs() {
-      const res = await this.request(`jobs`);
-      return res.jobs;
-    }
+  static async getJobs() {
+    const res = await this.request(`jobs`);
+    return res.jobs;
+  }
 }
 
 export default JoblyApi;
