@@ -6,15 +6,17 @@
     -signup
     -logout
 
-<Context />
+<userContext.Provider />
 Desc:
-Store user object 
+-take token, decode for username, and then make an API call to get the rest of the user details
+Store user object
 
-## Local storage?
+## Local storage - token
 
 <Navbar />
 Desc:
 Check Context for authenticated user and renders applicable navbar.
+BETTER => can just pass down directly from app - why bother with context if it can be passed directly?
 
 -state: none
 -props: none
@@ -33,11 +35,14 @@ Contain <Route />'s  to '/' (home), '/companies', '/companies:handle', '/jobs', 
 - props: none
 
 <UserForm />
+TODO: will probably be better to split this into three forms
 Desc:
-- Reusable component for login/signup/edit
+- Reusable component for '/login', '/signup', '/profile'
 
 Props: initialFormData, handleSave
 State: formData
+
+<FormErrors /> (working title)
 
 <CompaniesList />
 Desc:
@@ -72,6 +77,7 @@ Desc:
 -props:
 
 <JobCard />
+-context for apply buttons
 Desc:
 -Container for Job info.
 -state: none

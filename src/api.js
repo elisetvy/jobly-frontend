@@ -35,7 +35,7 @@ class JoblyApi {
     if (!resp.ok) {
       console.error("API Error:", resp.statusText, resp.status);
       const { error } = await resp.json();
-      throw Array.isArray(error) ? error : [error]; 
+      throw Array.isArray(error) ? error : [error];
     }
 
     return await resp.json();
@@ -69,6 +69,17 @@ class JoblyApi {
   static async getJobs(searchParams = {}) {
     const res = await this.request(`jobs`, searchParams);
     return res.jobs;
+  }
+
+  /** */
+  static async login(credentials) {
+    const res = await this.request("auth/token", credentials, "POST");
+    this.setToken(res.token);
+    return res.token;
+  }
+
+  static setToken(token) {
+    this.token = token;
   }
 }
 
