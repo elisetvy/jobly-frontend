@@ -12,7 +12,7 @@ function Searchbar({ searchType, search }) {
   /**Invokes search function on form submission */
   function handleSubmit(evt) {
     evt.preventDefault();
-    search(formData);
+    search(formData.trim());
     setFormData("");
   }
 

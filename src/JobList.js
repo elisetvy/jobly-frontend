@@ -6,6 +6,10 @@ import JoblyApi from "./api";
 
 /**Component listing jobs in JoblyAPI as <JobCards />.
  *
+ * Props: none
+ *
+ * State: jobs, isLoading
+ *
  * App -> JobList
  */
 function JobList() {
@@ -14,12 +18,7 @@ function JobList() {
 
   /**Loads jobs data on initial render */
   useEffect(function getJobsOnRender() {
-    async function getJobs() {
-      const jobsData = await JoblyApi.getJobs();
-      setJobs(jobsData);
-      setIsLoading(false);
-    }
-    getJobs();
+    searchJobs();
   }, []);
 
   /* Search for jobs based on title and update list on page. */

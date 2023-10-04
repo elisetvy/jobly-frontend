@@ -35,7 +35,7 @@ class JoblyApi {
     if (!resp.ok) {
       console.error("API Error:", resp.statusText, resp.status);
       const { error } = await resp.json();
-      throw Array.isArray(error) ? error : [error];
+      throw Array.isArray(error) ? error : [error]; 
     }
 
     return await resp.json();

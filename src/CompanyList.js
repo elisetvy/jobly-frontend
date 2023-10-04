@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
-import { v4 as uuid } from "uuid";
 import JoblyApi from "./api";
 import Searchbar from "./Searchbar";
 import CompanyCard from "./CompanyCard";
 
 /** Renders CompanyList component containing CompanyCards.
+ *
+ * Props: none
+ *
+ * State: companies, isLoading
  *
  * App -> CompanyList -> CompanyCard(s)
  */
@@ -14,12 +17,7 @@ function CompanyList() {
 
   /**Loads company data on initial render of the component */
   useEffect(function getCompaniesOnRender() {
-    async function getCompanies() {
-      const companiesData = await JoblyApi.getCompanies();
-      setCompanies(companiesData);
-      setIsLoading(false);
-    }
-    getCompanies();
+    searchCompanies();
   }, []);
 
   /* Search for companies based on company name and update list on page. */
@@ -43,7 +41,7 @@ function CompanyList() {
       ) : (
         <>
           {companies.map((c) => (
-            <CompanyCard key={uuid()} company={c} />
+            <CompanyCard key={c.handle} company={c} />
           ))}
         </>
       )}

@@ -6,8 +6,13 @@ import JobCard from "./JobCard";
 
 /**Component representing an individual company and its jobs.
  *
+ * Props: none
+ *
+ * State: company, isLoading
+ *
  * CompanyList -> CompanyDetails
  */
+
 function CompanyDetail() {
   const { handle } = useParams();
 
