@@ -71,13 +71,20 @@ class JoblyApi {
     return res.jobs;
   }
 
-  /** */
+  /** Log in user with credentials. */
   static async login(credentials) {
     const res = await this.request("auth/token", credentials, "POST");
     this.setToken(res.token);
     return res.token;
   }
 
+  /** Get user by username. */
+  static async getUser(username) {
+    const res = await this.request(`users/${username}`);
+    return res.user;
+  }
+
+  /** Sets token to passed in token. */
   static setToken(token) {
     this.token = token;
   }

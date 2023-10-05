@@ -1,7 +1,8 @@
 import { useState } from "react";
 import "./LoginForm.css";
+import JoblyApi from "./api";
 
-function LoginForm() {
+function LoginForm({ login }) {
   const [formData, setFormData] = useState({
     username: "",
     password: "",
@@ -14,6 +15,11 @@ function LoginForm() {
 
   function handleSubmit(evt) {
     evt.preventDefault();
+    login(formData);
+    setFormData({
+      username: "",
+      password: "",
+    });
   }
 
   return (
