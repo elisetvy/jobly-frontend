@@ -72,8 +72,6 @@ class JoblyApi {
 
   static async signup(newUser) {
     const res = await this.request("auth/register", newUser, "POST");
-    //TODO: move reset of of token in App.js
-    this.setToken(res.token);
     return res.token;
   }
 
@@ -81,7 +79,6 @@ class JoblyApi {
 
   static async login(credentials) {
     const res = await this.request("auth/token", credentials, "POST");
-    this.setToken(res.token);
     return res.token;
   }
 
@@ -90,12 +87,6 @@ class JoblyApi {
   static async getUser(username) {
     const res = await this.request(`users/${username}`);
     return res.user;
-  }
-
-  /** Sets token to passed in token. */
-
-  static setToken(token) {
-    this.token = token;
   }
 }
 

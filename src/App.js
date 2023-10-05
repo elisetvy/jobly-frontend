@@ -21,30 +21,50 @@ import JoblyApi from "./api";
 
 function App() {
   const [currUser, setCurrUser] = useState(null);
-  //TODO: useCurr token for when to run effects
   const [currToken, setCurrToken] = useState(null);
+  const [loadingUser, setLoadingUser] = useState(true);
 
-  //TODO: getuserinfo in useEffect
+  useEffect(function checkToken() {
+    const token = localStorage.getItem("token");
+    setCurrToken(token);
+  }, [])
+
+  /** Updates currUser when currToken changes. */
+  useEffect(function updateUserInfo() {
+
+    async function getUserInfo(token) {
+      const { username } = jwtDecode(token);
+      const user = await JoblyApi.getUser(username);
+      setLoadingUser(false);
+      setCurrUser(user);
+    }
+
+    if (currToken) {
+      JoblyApi.token = currToken;
+      getUserInfo(currToken);
+    }
+  }, [currToken])
 
   /** Register new user. */
   async function signup(newUser) {
     const token = await JoblyApi.signup(newUser);
     setCurrToken(token);
-    getUserInfo(token);
+    localStorage.setItem("token", token);
   }
 
   /** Log in user. */
   async function login(credentials) {
     const token = await JoblyApi.login(credentials);
     setCurrToken(token);
-    getUserInfo(token);
+    localStorage.setItem("token", token);
   }
 
   /** Log out user. */
   function logout() {
     setCurrUser(null);
     setCurrToken(null);
-    JoblyApi.setToken(null);
+    localStorage.removeItem("token");
+    JoblyApi.token = null;
   }
 
   /** Gets info on user. */
@@ -52,6 +72,10 @@ function App() {
     const { username } = jwtDecode(token);
     const user = await JoblyApi.getUser(username);
     setCurrUser(user);
+  }
+
+  if (loadingUser === true) {
+    return <h1>Loading...</h1>
   }
 
   return (
