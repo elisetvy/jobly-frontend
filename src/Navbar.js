@@ -5,6 +5,12 @@ import "./Navbar.css";
 
 /**Component for top-level navigation between routes.
  *
+ * Props: logout (fn)
+ *
+ * State: None
+ *
+ * Consumes Context: userContext
+ *
  * App -> NavBar
  */
 function Navbar({ logout }) {
@@ -21,7 +27,9 @@ function Navbar({ logout }) {
             <NavLink to="/companies">Companies</NavLink>
             <NavLink to="/jobs">Jobs</NavLink>
             <NavLink to="/profile">Profile</NavLink>
-            <button onClick={logout}>Logout {currUser.username}</button>
+            <button onClick={logout} className="Navbar-logout">
+              Logout {currUser.username}
+            </button>
           </>
         )}
         {!currUser && (

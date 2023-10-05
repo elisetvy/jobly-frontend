@@ -6,6 +6,9 @@
   width: 50vw;
   background-color: #FFFFFF;
   margin: auto;
+  padding: 10px 0;
+  border-radius: 8px;
+  box-shadow: 1px 2px 3px 1px black;
 }
 
 .UserForm-input, .UserForm-button {
@@ -15,6 +18,17 @@
   margin: 2px;
   border-radius: 5px;
   border: 1px solid black;
+}
+
+.UserForm-button {
+  margin-top: 10px;
+  background-color: rgb(48, 122, 207);
+  color: #FFFFFF;
+  transition-duration: .25s;
+}
+
+.UserForm-button:hover {
+  opacity: 70%;
 }
 
 .UserForm-label {

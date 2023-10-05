@@ -69,6 +69,7 @@ class JoblyApi {
   }
 
   /** Register a user with form data. */
+
   static async signup(newUser) {
     const res = await this.request("auth/register", newUser, "POST");
     this.setToken(res.token);
@@ -76,6 +77,7 @@ class JoblyApi {
   }
 
   /** Log in user with credentials. */
+
   static async login(credentials) {
     const res = await this.request("auth/token", credentials, "POST");
     this.setToken(res.token);
@@ -83,12 +85,14 @@ class JoblyApi {
   }
 
   /** Get user by username. */
+
   static async getUser(username) {
     const res = await this.request(`users/${username}`);
     return res.user;
   }
 
   /** Sets token to passed in token. */
+
   static setToken(token) {
     this.token = token;
   }

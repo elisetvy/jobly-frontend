@@ -4,6 +4,13 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 
 /**Landing page for Jobly.
+ *
+ * Props: none
+ *
+ * State: none
+ *
+ * Consumes Context: userContext
+ *
  *App -> Homepage
  */
 function Homepage() {

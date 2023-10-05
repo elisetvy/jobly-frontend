@@ -10,6 +10,8 @@ import JoblyApi from "./api";
  *
  * State: jobs, isLoading
  *
+ * Consumes Context: None
+ *
  * App -> JobList
  */
 function JobList() {

@@ -14,6 +14,8 @@ import JoblyApi from "./api";
  *
  * State: currUser, currToken
  *
+ * Provides Context: userContext
+ *
  * App -> Navbar/RoutesList
  */
 
@@ -23,9 +25,13 @@ function App() {
 
   /** Register new user. */
   async function signup(newUser) {
-    const token = await JoblyApi.signup(newUser);
-    setCurrToken(token);
-    getUserInfo(token);
+    try {
+      const token = await JoblyApi.signup(newUser);
+      setCurrToken(token);
+      getUserInfo(token);
+    } catch (err) {
+      throw err;
+    }
   }
 
   /** Log in user. */
@@ -34,7 +40,7 @@ function App() {
       const token = await JoblyApi.login(credentials);
       setCurrToken(token);
       getUserInfo(token);
-    } catch(err) {
+    } catch (err) {
       throw err;
     }
   }
@@ -43,7 +49,7 @@ function App() {
   function logout() {
     setCurrUser(null);
     setCurrToken(null);
-    JoblyApi.setToken(null)
+    JoblyApi.setToken(null);
   }
 
   /** Gets info on user. */

@@ -12,15 +12,18 @@ import JobList from "./JobList";
 
 /** Component for defining routes.
  *
- * Props: login
+ * Props: login, signup
  *
  * State: none
+ *
+ * Consumes Context: userContext
  *
  * App -> RoutesList
  */
 
 function RoutesList({ login, signup }) {
   const currUser = useContext(userContext);
+
   return (
     <Routes>
       <Route path="/" element={<Homepage />} />

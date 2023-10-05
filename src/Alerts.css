@@ -1,0 +1,13 @@
+.Alerts {
+  background-color: tomato;
+  width: 80%;
+  padding: 4px 3px;
+  border-radius: 5px;
+}
+
+.Alerts-message {
+  list-style-type: none;
+  font-size: 14px;
+  padding: 5px;
+  color: maroon;
+}

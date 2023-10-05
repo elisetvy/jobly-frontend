@@ -1,6 +1,16 @@
 import { useState } from "react";
 import "./Searchbar.css";
 
+/** Reusable searchbar component for Jobly App.
+ *
+ * Props: searchType, search (fn)
+ *
+ * State: formData
+ *
+ * Consumes Context: None
+ *
+ * CompanyList/JobsList -> SearchBar
+ */
 function Searchbar({ searchType, search }) {
   const [formData, setFormData] = useState("");
 

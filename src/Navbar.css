@@ -11,7 +11,21 @@
   font-weight: 900;
 }
 
-a {
+.Navbar-logout {
+  border: none;
+  background-color: white;
+  font-size: 16px;
+  color: grey;
+  font-style: italic;
+  cursor: pointer;
+  transition-duration: .25s;
+}
+
+.Navbar-logout:hover {
+  opacity: 60%
+}
+
+a, .Navbar-logout {
   margin: 5px;
   text-decoration: none;
   color: black

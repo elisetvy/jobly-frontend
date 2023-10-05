@@ -4,6 +4,16 @@ import "./UserForm.css";
 import JoblyApi from "./api";
 import Alerts from "./Alerts";
 
+/**Form for logging in to Jobly App.
+ *
+ * Props: Login (fn)
+ *
+ * State: formData, errors
+ *
+ * Consumes Context: None
+ *
+ * App -> RouteList -> LoginForm
+ */
 function LoginForm({ login }) {
   const [formData, setFormData] = useState({
     username: "",
@@ -13,18 +23,22 @@ function LoginForm({ login }) {
 
   const navigate = useNavigate();
 
+  /**Updates state based on form input change */
   function handleChange(evt) {
     const { name, value } = evt.target;
     setFormData((fData) => ({ ...fData, [name]: value }));
   }
 
- async function handleSubmit(evt) {
+  /**Handles form submission. Redirects to home on success, renders error
+   * alerts with invalid credentials.
+   */
+  async function handleSubmit(evt) {
     evt.preventDefault();
     try {
       await login(formData);
       navigate("/");
-    } catch(err) {
-      setErrors(err)
+    } catch (err) {
+      setErrors(err);
     }
   }
 
