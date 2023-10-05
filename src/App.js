@@ -21,28 +21,23 @@ import JoblyApi from "./api";
 
 function App() {
   const [currUser, setCurrUser] = useState(null);
+  //TODO: useCurr token for when to run effects
   const [currToken, setCurrToken] = useState(null);
+
+  //TODO: getuserinfo in useEffect
 
   /** Register new user. */
   async function signup(newUser) {
-    try {
-      const token = await JoblyApi.signup(newUser);
-      setCurrToken(token);
-      getUserInfo(token);
-    } catch (err) {
-      throw err;
-    }
+    const token = await JoblyApi.signup(newUser);
+    setCurrToken(token);
+    getUserInfo(token);
   }
 
   /** Log in user. */
   async function login(credentials) {
-    try {
-      const token = await JoblyApi.login(credentials);
-      setCurrToken(token);
-      getUserInfo(token);
-    } catch (err) {
-      throw err;
-    }
+    const token = await JoblyApi.login(credentials);
+    setCurrToken(token);
+    getUserInfo(token);
   }
 
   /** Log out user. */

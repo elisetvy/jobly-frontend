@@ -72,6 +72,7 @@ class JoblyApi {
 
   static async signup(newUser) {
     const res = await this.request("auth/register", newUser, "POST");
+    //TODO: move reset of of token in App.js
     this.setToken(res.token);
     return res.token;
   }
