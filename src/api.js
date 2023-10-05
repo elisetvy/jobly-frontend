@@ -12,7 +12,7 @@ class JoblyApi {
   // Remember, the backend needs to be authorized with a token
   // We're providing a token you can use to interact with the backend API
   // DON'T MODIFY THIS TOKEN
-  static token = "";
+  static token = null;
 
   static async request(endpoint, data = {}, method = "GET") {
     const url = new URL(`${BASE_URL}/${endpoint}`);
@@ -66,6 +66,13 @@ class JoblyApi {
   static async getJobs(searchParams = {}) {
     const res = await this.request(`jobs`, searchParams);
     return res.jobs;
+  }
+
+  /** Register a user with form data. */
+  static async signup(newUser) {
+    const res = await this.request("auth/register", newUser, "POST");
+    this.setToken(res.token);
+    return res.token;
   }
 
   /** Log in user with credentials. */

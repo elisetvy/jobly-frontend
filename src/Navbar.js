@@ -7,9 +7,8 @@ import "./Navbar.css";
  *
  * App -> NavBar
  */
-function Navbar() {
+function Navbar({ logout }) {
   const currUser = useContext(userContext);
-  console.log(userContext);
 
   return (
     <nav className="Navbar">
@@ -22,7 +21,7 @@ function Navbar() {
             <NavLink to="/companies">Companies</NavLink>
             <NavLink to="/jobs">Jobs</NavLink>
             <NavLink to="/profile">Profile</NavLink>
-            <button>Logout {currUser.username}</button>
+            <button onClick={logout}>Logout {currUser.username}</button>
           </>
         )}
         {!currUser && (

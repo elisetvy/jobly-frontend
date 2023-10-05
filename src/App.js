@@ -21,11 +21,29 @@ function App() {
   const [currUser, setCurrUser] = useState(null);
   const [currToken, setCurrToken] = useState(null);
 
-  /** Log in user. */
-  async function login(credentials) {
-    const token = await JoblyApi.login(credentials);
+  /** Register new user. */
+  async function signup(newUser) {
+    const token = await JoblyApi.signup(newUser);
     setCurrToken(token);
     getUserInfo(token);
+  }
+
+  /** Log in user. */
+  async function login(credentials) {
+    try {
+      const token = await JoblyApi.login(credentials);
+      setCurrToken(token);
+      getUserInfo(token);
+    } catch(err) {
+      throw err;
+    }
+  }
+
+  /** Log out user. */
+  function logout() {
+    setCurrUser(null);
+    setCurrToken(null);
+    JoblyApi.setToken(null)
   }
 
   /** Gets info on user. */
@@ -39,8 +57,8 @@ function App() {
     <div className="App">
       <userContext.Provider value={currUser}>
         <BrowserRouter>
-          <Navbar />
-          <RoutesList login={login} />
+          <Navbar logout={logout} />
+          <RoutesList login={login} signup={signup} />
         </BrowserRouter>
       </userContext.Provider>
     </div>

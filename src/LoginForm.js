@@ -1,13 +1,16 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./LoginForm.css";
+import "./UserForm.css";
 import JoblyApi from "./api";
+import Alerts from "./Alerts";
 
 function LoginForm({ login }) {
   const [formData, setFormData] = useState({
     username: "",
     password: "",
   });
+  const [errors, setErrors] = useState([]);
+
   const navigate = useNavigate();
 
   function handleChange(evt) {
@@ -15,21 +18,21 @@ function LoginForm({ login }) {
     setFormData((fData) => ({ ...fData, [name]: value }));
   }
 
-  function handleSubmit(evt) {
+ async function handleSubmit(evt) {
     evt.preventDefault();
-    login(formData);
-    setFormData({
-      username: "",
-      password: "",
-    });
-    navigate("/");
+    try {
+      await login(formData);
+      navigate("/");
+    } catch(err) {
+      setErrors(err)
+    }
   }
 
   return (
     <>
-      <h1>Login</h1>
-      <form onSubmit={handleSubmit} className="LoginForm">
-        <label htmlFor="username" className="LoginForm-label">
+      <h1 className="whiteWithShadow">Login</h1>
+      <form onSubmit={handleSubmit} className="UserForm">
+        <label htmlFor="username" className="UserForm-label">
           Username
         </label>
         <input
@@ -37,9 +40,10 @@ function LoginForm({ login }) {
           name="username"
           value={formData.username}
           onChange={handleChange}
-          className="LoginForm-input"
+          className="UserForm-input"
+          required
         />
-        <label htmlFor="password" className="LoginForm-label">
+        <label htmlFor="password" className="UserForm-label">
           Password
         </label>
         <input
@@ -48,9 +52,11 @@ function LoginForm({ login }) {
           value={formData.password}
           onChange={handleChange}
           type="password"
-          className="LoginForm-input"
+          className="UserForm-input"
+          required
         />
-        <button className="LoginForm-button">Submit</button>
+        {errors.length > 0 && <Alerts errors={errors} />}
+        <button className="UserForm-button">Submit</button>
       </form>
     </>
   );
