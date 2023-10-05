@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./LoginForm.css";
 import JoblyApi from "./api";
 
@@ -7,6 +8,7 @@ function LoginForm({ login }) {
     username: "",
     password: "",
   });
+  const navigate = useNavigate();
 
   function handleChange(evt) {
     const { name, value } = evt.target;
@@ -20,28 +22,35 @@ function LoginForm({ login }) {
       username: "",
       password: "",
     });
+    navigate("/");
   }
 
   return (
     <>
       <h1>Login</h1>
       <form onSubmit={handleSubmit} className="LoginForm">
-        <label htmlFor="username">Username</label>
+        <label htmlFor="username" className="LoginForm-label">
+          Username
+        </label>
         <input
           id="username"
           name="username"
           value={formData.username}
           onChange={handleChange}
+          className="LoginForm-input"
         />
-        <label htmlFor="password">Password</label>
+        <label htmlFor="password" className="LoginForm-label">
+          Password
+        </label>
         <input
           id="password"
           name="password"
           value={formData.password}
           onChange={handleChange}
           type="password"
+          className="LoginForm-input"
         />
-        <button>Submit</button>
+        <button className="LoginForm-button">Submit</button>
       </form>
     </>
   );

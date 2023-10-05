@@ -1,4 +1,6 @@
 import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import userContext from "./userContext";
 import "./Navbar.css";
 
 /**Component for top-level navigation between routes.
@@ -6,14 +8,29 @@ import "./Navbar.css";
  * App -> NavBar
  */
 function Navbar() {
+  const currUser = useContext(userContext);
+  console.log(userContext);
+
   return (
     <nav className="Navbar">
       <div>
         <NavLink to="/">Jobly</NavLink>
       </div>
       <div>
-        <NavLink to="/companies">Companies</NavLink>
-        <NavLink to="/jobs">Jobs</NavLink>
+        {currUser && (
+          <>
+            <NavLink to="/companies">Companies</NavLink>
+            <NavLink to="/jobs">Jobs</NavLink>
+            <NavLink to="/profile">Profile</NavLink>
+            <button>Logout {currUser.username}</button>
+          </>
+        )}
+        {!currUser && (
+          <>
+            <NavLink to="/login">Login</NavLink>
+            <NavLink to="/signup">Signup</NavLink>
+          </>
+        )}
       </div>
     </nav>
   );
