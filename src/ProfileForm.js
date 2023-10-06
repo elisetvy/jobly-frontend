@@ -23,7 +23,6 @@ function ProfileForm({ update }) {
     email: currUser.email,
   });
 
-  const [errors, setErrors] = useState([]);
   const [alerts, setAlerts] = useState({
     messages: [],
     type: "",
@@ -46,12 +45,12 @@ function ProfileForm({ update }) {
         lastName: formData.lastName,
         email: formData.email,
       });
-      setAlerts({
-        messages: ["Your changes have been saved"],
+      setAlerts([{
+        message: ["Your changes have been saved"],
         type: "success",
-      });
+      }]);
     } catch (err) {
-      setErrors(err);
+      setAlerts(err);
     }
   }
 
@@ -103,8 +102,7 @@ function ProfileForm({ update }) {
           className="UserForm-input"
           required
         />
-        {/* {alerts.length > 0 && <Alerts alerts={alerts} />} */}
-        {errors.length > 0 && <Alerts errors={errors} />}
+        {alerts.length > 0 && <Alerts alerts={alerts} />}
         <button className="UserForm-button">Submit</button>
       </form>
     </>

@@ -19,7 +19,11 @@ function LoginForm({ login }) {
     username: "",
     password: "",
   });
-  const [errors, setErrors] = useState([]);
+
+  const [alerts, setAlerts] = useState({
+    messages: [],
+    type: "",
+  });
 
   const navigate = useNavigate();
 
@@ -38,7 +42,7 @@ function LoginForm({ login }) {
       await login(formData);
       navigate("/");
     } catch (err) {
-      setErrors(err);
+      setAlerts(err);
     }
   }
 
@@ -69,7 +73,7 @@ function LoginForm({ login }) {
           className="UserForm-input"
           required
         />
-        {errors.length > 0 && <Alerts errors={errors} />}
+        {alerts.length > 0 && <Alerts alerts={alerts} />}
         <button className="UserForm-button">Submit</button>
       </form>
     </>

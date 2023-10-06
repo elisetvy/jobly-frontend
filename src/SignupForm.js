@@ -20,7 +20,11 @@ function SignupForm({ signup }) {
     lastName: "",
     email: "",
   });
-  const [errors, setErrors] = useState([]);
+
+  const [alerts, setAlerts] = useState({
+    messages: [],
+    type: "",
+  });
 
   const navigate = useNavigate();
 
@@ -39,7 +43,7 @@ function SignupForm({ signup }) {
       await signup(formData);
       navigate("/");
     } catch (err) {
-      setErrors(err);
+      setAlerts(err);
     }
   }
 
@@ -103,7 +107,7 @@ function SignupForm({ signup }) {
           className="UserForm-input"
           required
         />
-        {errors.length > 0 && <Alerts errors={errors} />}
+        {alerts.length > 0 && <Alerts alerts={alerts} />}
         <button className="UserForm-button">Submit</button>
       </form>
     </>

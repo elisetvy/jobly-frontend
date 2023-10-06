@@ -11,7 +11,7 @@ import "./Alerts.css";
  * LoginForm/SignupForm/ProfileForm -> Alerts
  */
 
-function Alerts({ errors }) {
+function Alerts({ alerts }) {
   // console.log(alerts);
   // return (
   //   <>
@@ -24,16 +24,18 @@ function Alerts({ errors }) {
   //     </ul>
   //   </>
   // );
+  const color = alerts[0].type === "success" ? "Alerts-success" : "Alerts-error";
+
   return (
     <>
-      <ul className="Alerts">
-        {Array.isArray(errors[0].message) &&
-          errors[0].message.map((msg, idx) => (
+      <ul className={`Alerts ${color}`}>
+        {Array.isArray(alerts[0].message) &&
+          alerts[0].message.map((msg, idx) => (
             <li className="Alerts-message" key={idx}>
               {msg}
             </li>
           ))}
-        {!Array.isArray(errors[0].message) && <p>{errors[0].message}</p>}
+        {!Array.isArray(alerts[0].message) && <p>{alerts[0].message}</p>}
       </ul>
     </>
   );

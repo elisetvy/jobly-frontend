@@ -1,13 +1,21 @@
 .Alerts {
-  background-color: tomato;
   width: 80%;
   padding: 4px 3px;
   border-radius: 5px;
+}
+
+.Alerts-error {
+  background-color: tomato;
+  color: maroon;
+}
+
+.Alerts-success {
+  background-color: rgb(109, 195, 109);
+  color: rgb(0, 59, 0)
 }
 
 .Alerts-message {
   list-style-type: none;
   font-size: 14px;
   padding: 5px;
-  color: maroon;
 }
