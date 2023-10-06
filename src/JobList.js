@@ -18,6 +18,7 @@ import Loading from "./Loading";
 function JobList() {
   const [jobs, setJobs] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [currSearch, setCurrSearch] = useState("");
 
   /**Loads jobs data on initial render */
   useEffect(function getJobsOnRender() {
@@ -27,6 +28,7 @@ function JobList() {
   /* Search for jobs based on title and update list on page. */
   async function searchJobs(searchParam) {
     setIsLoading(true);
+    setCurrSearch(searchParam)
     const jobsData = searchParam
       ? await JoblyApi.getJobs({ title: searchParam })
       : await JoblyApi.getJobs();
@@ -42,9 +44,12 @@ function JobList() {
         <Loading />
       ) : (
         <>
-          {jobs.map((j) => (
-            <JobCard key={j.id} job={j} />
-          ))}
+        {jobs.length === 0 && <h3 className="whiteWithShadow">Sorry, no
+        jobs match: {currSearch}.</h3>}
+
+        {jobs.map((j) => (
+          <JobCard key={j.id} job={j} />
+        ))}
         </>
       )}
     </>

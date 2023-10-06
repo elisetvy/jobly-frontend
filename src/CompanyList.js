@@ -15,6 +15,7 @@ import Loading from "./Loading";
 function CompanyList() {
   const [companies, setCompanies] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [currSearch, setCurrSearch] = useState("");
 
   /**Loads company data on initial render of the component */
   useEffect(function getCompaniesOnRender() {
@@ -24,6 +25,7 @@ function CompanyList() {
   /* Search for companies based on company name and update list on page. */
   async function searchCompanies(searchParam) {
     setIsLoading(true);
+    setCurrSearch(searchParam)
     const companiesData = searchParam
       ? await JoblyApi.getCompanies({
           nameLike: searchParam,
@@ -41,9 +43,12 @@ function CompanyList() {
         <Loading />
       ) : (
         <>
-          {companies.map((c) => (
-            <CompanyCard key={c.handle} company={c} />
-          ))}
+        {companies.length === 0 && <h3 className="whiteWithShadow">Sorry, no
+        companies match: {currSearch}.</h3>}
+
+        {companies.map((c) => (
+          <CompanyCard key={c.handle} company={c} />
+        ))}
         </>
       )}
     </>

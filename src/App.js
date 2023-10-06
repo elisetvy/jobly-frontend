@@ -57,6 +57,7 @@ function App() {
   /** Log in user. */
   async function login(credentials) {
     const token = await JoblyApi.login(credentials);
+    setLoadingUser(true);
     setCurrToken(token);
     localStorage.setItem("token", token);
   }
