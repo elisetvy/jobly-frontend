@@ -1,5 +1,6 @@
 .JobCard {
   width: 60vw;
+  max-width: 750px;
   padding: 10px 20px;
   background: #FFFFFF;
   margin: 3px auto;

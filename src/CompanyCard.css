@@ -9,6 +9,7 @@
 
 .CompanyCard {
   width: 60vw;
+  max-width: 750px;
   padding: 5px 10px;
   background: #FFFFFF;
   margin: 3px auto;
