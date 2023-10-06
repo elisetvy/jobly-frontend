@@ -4,6 +4,7 @@
   justify-content: space-evenly;
   align-items: center;
   width: 50vw;
+  max-width: 360px;
   background-color: #FFFFFF;
   margin: auto;
   padding: 10px 0;
@@ -34,4 +35,8 @@
 .UserForm-label {
   width: 80%;
   text-align: left;
+}
+
+.UserForm-input {
+  margin-bottom: 10px;
 }

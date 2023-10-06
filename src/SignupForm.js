@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import JoblyApi from "./api";
 import "./UserForm.css";
 import Alerts from "./Alerts";
 
@@ -8,10 +7,11 @@ import Alerts from "./Alerts";
  *
  * Props: signup (fn)
  *
- * State: formData, errors
+ * State: formData, alerts
  *
  * RoutesList -> Signupform
  */
+
 function SignupForm({ signup }) {
   const [formData, setFormData] = useState({
     username: "",
@@ -59,6 +59,7 @@ function SignupForm({ signup }) {
           name="username"
           value={formData.username}
           onChange={handleChange}
+          type="text"
           className="UserForm-input"
           required
         />
@@ -82,6 +83,7 @@ function SignupForm({ signup }) {
           name="firstName"
           value={formData.firstName}
           onChange={handleChange}
+          type="text"
           className="UserForm-input"
           required
         />
@@ -93,6 +95,7 @@ function SignupForm({ signup }) {
           name="lastName"
           value={formData.lastName}
           onChange={handleChange}
+          type="text"
           className="UserForm-input"
           required
         />
@@ -104,6 +107,7 @@ function SignupForm({ signup }) {
           name="email"
           value={formData.email}
           onChange={handleChange}
+          type="email"
           className="UserForm-input"
           required
         />

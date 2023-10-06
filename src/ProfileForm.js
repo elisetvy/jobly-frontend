@@ -5,9 +5,9 @@ import Alerts from "./Alerts";
 
 /**Form for a logged in user to edit their profile.
  *
- * Props:
+ * Props: update (fn)
  *
- * State: formData, errors
+ * State: formData, alerts
  *
  * Consumes Context: userContext
  *
@@ -66,6 +66,7 @@ function ProfileForm({ update }) {
           name="username"
           value={formData.username}
           onChange={handleChange}
+          type="text"
           className="UserForm-input"
           disabled
         />
@@ -77,6 +78,7 @@ function ProfileForm({ update }) {
           name="firstName"
           value={formData.firstName}
           onChange={handleChange}
+          type="text"
           className="UserForm-input"
           required
         />
@@ -88,6 +90,7 @@ function ProfileForm({ update }) {
           name="lastName"
           value={formData.lastName}
           onChange={handleChange}
+          type="text"
           className="UserForm-input"
           required
         />
@@ -99,6 +102,7 @@ function ProfileForm({ update }) {
           name="email"
           value={formData.email}
           onChange={handleChange}
+          type="email"
           className="UserForm-input"
           required
         />

@@ -1,19 +1,19 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./UserForm.css";
-import JoblyApi from "./api";
 import Alerts from "./Alerts";
 
 /**Form for logging in to Jobly App.
  *
  * Props: Login (fn)
  *
- * State: formData, errors
+ * State: formData, alerts
  *
  * Consumes Context: None
  *
  * App -> RouteList -> LoginForm
  */
+
 function LoginForm({ login }) {
   const [formData, setFormData] = useState({
     username: "",
@@ -58,6 +58,7 @@ function LoginForm({ login }) {
           name="username"
           value={formData.username}
           onChange={handleChange}
+          type="text"
           className="UserForm-input"
           required
         />
