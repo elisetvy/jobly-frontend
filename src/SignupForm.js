@@ -10,8 +10,6 @@ import Alerts from "./Alerts";
  *
  * State: formData, errors
  *
- * Consumes Context: userContext
- *
  * RoutesList -> Signupform
  */
 function SignupForm({ signup }) {

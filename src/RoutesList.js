@@ -21,7 +21,7 @@ import JobList from "./JobList";
  * App -> RoutesList
  */
 
-function RoutesList({ login, signup }) {
+function RoutesList({ login, signup, update }) {
   const currUser = useContext(userContext);
 
   return (
@@ -35,7 +35,7 @@ function RoutesList({ login, signup }) {
       )}
       {currUser && (
         <>
-          <Route path="/profile" element={<ProfileForm />} />
+          <Route path="/profile" element={<ProfileForm update={update} />} />
           <Route path="/companies" element={<CompanyList />} />
           <Route path="/companies/:handle" element={<CompanyDetail />} />
           <Route path="/jobs" element={<JobList />} />

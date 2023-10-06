@@ -12,7 +12,6 @@ import "./Alerts.css";
  */
 
 function Alerts({ errors }) {
-  console.log(errors);
   return (
     <>
       <ul className="Alerts">

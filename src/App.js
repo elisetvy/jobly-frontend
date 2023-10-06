@@ -21,22 +21,22 @@ import JoblyApi from "./api";
 
 function App() {
   const [currUser, setCurrUser] = useState(null);
-  const [currToken, setCurrToken] = useState(localStorage.getItem("token"));
+  const [currToken, setCurrToken] = useState(localStorage.getItem("token") || "");
   const [loadingUser, setLoadingUser] = useState(true);
 
   /** Updates currUser when currToken changes. */
   useEffect(
     function updateUserInfo() {
-      async function getUserInfo(token) {
-        const { username } = jwtDecode(token);
+      async function getUserInfo() {
+        JoblyApi.token = currToken;
+        const { username } = jwtDecode(currToken);
         const user = await JoblyApi.getUser(username);
         setLoadingUser(false);
         setCurrUser(user);
       }
 
       if (currToken) {
-        JoblyApi.token = currToken;
-        getUserInfo(currToken);
+        getUserInfo();
       } else {
         setLoadingUser(false);
       }
@@ -58,6 +58,12 @@ function App() {
     localStorage.setItem("token", token);
   }
 
+  /** Update a user. */
+  async function update(username, updatedUser) {
+    const updatedUserData = await JoblyApi.updateUser(username, updatedUser);
+    setCurrUser(c => ({...updatedUserData, applications: c.applications }));
+  }
+
   /** Log out user. */
   function logout() {
     setCurrUser(null);
@@ -75,7 +81,7 @@ function App() {
       <userContext.Provider value={currUser}>
         <BrowserRouter>
           <Navbar logout={logout} />
-          <RoutesList login={login} signup={signup} />
+          <RoutesList login={login} signup={signup} update={update} />
         </BrowserRouter>
       </userContext.Provider>
     </div>
