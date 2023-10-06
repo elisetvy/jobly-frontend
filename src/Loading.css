@@ -1,0 +1,36 @@
+@keyframes spin {
+  100% {
+    transform: rotate(360deg)
+    }
+}
+
+@keyframes reverse-spin {
+  100% {
+    transform: rotate(-360deg)
+    }
+}
+
+.Loading-spinner {
+  margin: 100px auto;
+  position: relative;
+  border: 1px solid;
+  border-color: black transparent black transparent;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  animation: spin 5s infinite linear;
+}
+
+.Loading-spinner::before {
+  content: "";
+  box-sizing: border-box;
+  top: 10%;
+  left: 10%;
+  width: 80px;
+  height: 80px;
+  border: 1px solid;
+  border-color: transparent red transparent red;
+  border-radius: 50%;
+  position: absolute;
+  animation: reverse-spin 1s infinite linear;
+}
