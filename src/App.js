@@ -4,6 +4,7 @@ import userContext from "./userContext";
 import jwtDecode from "jwt-decode";
 import logo from "./logo.svg";
 import "./App.css";
+import Loading from "./Loading";
 import Navbar from "./Navbar";
 import RoutesList from "./RoutesList";
 import JoblyApi from "./api";
@@ -78,7 +79,7 @@ function App() {
   }
 
   if (loadingUser === true) {
-    return <h1>Loading...</h1>;
+    return <Loading />;
   }
 
   return (

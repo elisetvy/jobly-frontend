@@ -9,6 +9,7 @@ import ProfileForm from "./ProfileForm";
 import CompanyList from "./CompanyList";
 import CompanyDetail from "./CompanyDetail";
 import JobList from "./JobList";
+import Loading from "./Loading";
 
 /** Component for defining routes.
  *

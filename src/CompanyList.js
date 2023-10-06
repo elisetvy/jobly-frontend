@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import JoblyApi from "./api";
 import Searchbar from "./Searchbar";
 import CompanyCard from "./CompanyCard";
+import Loading from "./Loading";
 
 /** Renders CompanyList component containing CompanyCards.
  *
@@ -37,7 +38,7 @@ function CompanyList() {
       <h1 className="whiteWithShadow">Companies</h1>
       <Searchbar searchType={"company"} search={searchCompanies} />
       {isLoading === true ? (
-        <p>Loading...</p>
+        <Loading />
       ) : (
         <>
           {companies.map((c) => (

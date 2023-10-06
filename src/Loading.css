@@ -1,3 +1,12 @@
+.Loading {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+}
+
 @keyframes spin {
   100% {
     transform: rotate(360deg)
@@ -11,10 +20,10 @@
 }
 
 .Loading-spinner {
-  margin: 100px auto;
   position: relative;
-  border: 1px solid;
-  border-color: black transparent black transparent;
+  border: 2px solid;
+  border-color: #0fcde4 transparent #134cc3 transparent;
+  /* box-shadow: 0px 1px 0px  white; */
   border-radius: 50%;
   width: 100px;
   height: 100px;
@@ -28,8 +37,8 @@
   left: 10%;
   width: 80px;
   height: 80px;
-  border: 1px solid;
-  border-color: transparent red transparent red;
+  border: 2px solid;
+  border-color: transparent #f6af7a transparent #f340d5;
   border-radius: 50%;
   position: absolute;
   animation: reverse-spin 1s infinite linear;

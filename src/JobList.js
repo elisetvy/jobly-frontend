@@ -3,6 +3,7 @@ import JobCard from "./JobCard";
 import Searchbar from "./Searchbar";
 
 import JoblyApi from "./api";
+import Loading from "./Loading";
 
 /**Component listing jobs in JoblyAPI as <JobCards />.
  *
@@ -38,7 +39,7 @@ function JobList() {
       <h1 className="whiteWithShadow">Jobs</h1>
       <Searchbar searchType={"job"} search={searchJobs} />
       {isLoading === true ? (
-        <p>Loading...</p>
+        <Loading />
       ) : (
         <>
           {jobs.map((j) => (
