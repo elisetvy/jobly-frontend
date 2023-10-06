@@ -42,7 +42,6 @@ function Searchbar({ searchType, search }) {
         onChange={handleChange}
         className="Searchbar-input"
       ></input>
-      <button className="Searchbar-button">Search</button>
     </form>
   );
 }
