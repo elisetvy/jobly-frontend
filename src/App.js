@@ -21,7 +21,9 @@ import JoblyApi from "./api";
 
 function App() {
   const [currUser, setCurrUser] = useState(null);
-  const [currToken, setCurrToken] = useState(localStorage.getItem("token") || "");
+  const [currToken, setCurrToken] = useState(
+    localStorage.getItem("token") || ""
+  );
   const [loadingUser, setLoadingUser] = useState(true);
 
   /** Updates currUser when currToken changes. */
@@ -59,9 +61,12 @@ function App() {
   }
 
   /** Update a user. */
-  async function update(username, updatedUser) {
-    const updatedUserData = await JoblyApi.updateUser(username, updatedUser);
-    setCurrUser(c => ({...updatedUserData, applications: c.applications }));
+  async function update(updatedUser) {
+    const updatedUserData = await JoblyApi.updateUser(
+      currUser.username,
+      updatedUser
+    );
+    setCurrUser((c) => ({ ...updatedUserData, applications: c.applications }));
   }
 
   /** Log out user. */

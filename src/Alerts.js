@@ -12,6 +12,18 @@ import "./Alerts.css";
  */
 
 function Alerts({ errors }) {
+  // console.log(alerts);
+  // return (
+  //   <>
+  //     <ul className="Alerts">
+  //       {alerts.messages.map((msg, idx) => (
+  //         <li className="Alerts-message" key={idx}>
+  //           {msg}
+  //         </li>
+  //       ))}
+  //     </ul>
+  //   </>
+  // );
   return (
     <>
       <ul className="Alerts">
