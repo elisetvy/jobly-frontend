@@ -42,6 +42,7 @@ function RoutesList({ login, signup, update }) {
           <Route path="/jobs" element={<JobList />} />
         </>
       )}
+      <Route path="loading" element={<Loading />} />
       <Route path="*" element={<Navigate to="/" />} />
     </Routes>
   );
