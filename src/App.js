@@ -84,7 +84,7 @@ function App() {
   }
 
   return (
-    <div className="App h-screen w-screen overflow-hidden">
+    <div className="App relative">
       <userContext.Provider value={currUser}>
         <BrowserRouter>
           <Navbar logout={logout} />

@@ -43,7 +43,7 @@ function CompanyList() {
         <Loading />
       ) : (
         <div className="flex flex-col items-center">
-        {companies.length === 0 && <h3 className="whiteWithShadow">Sorry, no
+        {companies.length === 0 && <h3 className="">Sorry, no
         companies match: {currSearch}.</h3>}
 
         {companies.map((c) => (
