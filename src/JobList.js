@@ -38,7 +38,7 @@ function JobList() {
 
   return (
     <>
-      <h1 className="mb-4">Jobs</h1>
+      <h1 className="mb-4 text-3xl font-bold">Jobs</h1>
       <Searchbar searchType={"job"} search={searchJobs} />
       {isLoading === true ? (
         <Loading />

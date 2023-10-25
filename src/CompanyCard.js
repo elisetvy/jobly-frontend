@@ -17,15 +17,15 @@ function CompanyCard({ company }) {
   logoUrl === null ? (isVisible = "hidden") : (isVisible = "visible");
 
   return (
-    <div className="CompanyCard bg-white mb-4 w-2/5 px-4 py-4 rounded-lg text-left">
-      <Link to={`/companies/${handle}`}>
-        <div className="CompanyCard-detail flex justify-between items-center">
-          <h3>{name}</h3>
-          <img src={logoUrl} alt="logo" style={{ visibility: isVisible }} className="h-8"/>
+      <Link to={`/companies/${handle}`} className="w-2/5">
+    <div className="CompanyCard flex gap-x-4 justify-between bg-white mb-4 px-4 py-4 rounded-lg text-left">
+        <div className="CompanyCard-detail flex flex-col">
+          <h3 className="text-lg font-bold">{name}</h3>
+          <p>{description}</p>
         </div>
-        <p>{description}</p>
-      </Link>
+        <img src={logoUrl} alt="logo" style={{ visibility: isVisible }} className="h-8"/>
     </div>
+      </Link>
   );
 }
 
