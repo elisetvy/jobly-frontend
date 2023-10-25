@@ -37,19 +37,19 @@ function CompanyList() {
 
   return (
     <>
-      <h1 className="whiteWithShadow">Companies</h1>
+      <h1 className="mb-4">Companies</h1>
       <Searchbar searchType={"company"} search={searchCompanies} />
       {isLoading === true ? (
         <Loading />
       ) : (
-        <>
+        <div className="flex flex-col items-center">
         {companies.length === 0 && <h3 className="whiteWithShadow">Sorry, no
         companies match: {currSearch}.</h3>}
 
         {companies.map((c) => (
           <CompanyCard key={c.handle} company={c} />
         ))}
-        </>
+        </div>
       )}
     </>
   );
