@@ -1,4 +1,4 @@
-import "./Homepage.css";
+// import "./Homepage.css";
 import userContext from "./userContext";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
@@ -17,11 +17,10 @@ function Homepage() {
   const currUser = useContext(userContext);
 
   return (
-    <div className="Homepage whiteWithShadow">
+    <div className="Homepage flex flex-col justify-center items-center h-full -m-20">
       <h1>Jobly</h1>
-      <h3>All the jobs, all in one place.</h3>
       {currUser ? (
-        <h4>Welcome back, {currUser.username}!</h4>
+        <h4 className="mt-10 text-lg">Welcome back, {currUser.username}!</h4>
       ) : (
         <>
           <div>
