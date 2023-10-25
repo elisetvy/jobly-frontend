@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./UserForm.css";
+// import "./UserForm.css";
 import Alerts from "./Alerts";
 
 /**Form for logging in to Jobly App.
@@ -47,10 +47,10 @@ function LoginForm({ login }) {
   }
 
   return (
-    <>
-      <h1 className="whiteWithShadow">Login</h1>
-      <form onSubmit={handleSubmit} className="UserForm">
-        <label htmlFor="username" className="UserForm-label">
+    <div className="w-screen flex flex-col items-center">
+      <h1 className="mb-4 text-3xl font-bold">Login</h1>
+      <form onSubmit={handleSubmit} className="flex flex-col w-1/4 bg-stone-100 px-6 py-6 rounded-lg">
+        <label htmlFor="username" className="text-left px-1 mt-2 font-bold">
           Username
         </label>
         <input
@@ -59,10 +59,10 @@ function LoginForm({ login }) {
           value={formData.username}
           onChange={handleChange}
           type="text"
-          className="UserForm-input"
+          className="px-2 py-1 rounded-lg mb-2"
           required
         />
-        <label htmlFor="password" className="UserForm-label">
+        <label htmlFor="password" className="text-left px-1 mt-2 font-bold">
           Password
         </label>
         <input
@@ -71,13 +71,13 @@ function LoginForm({ login }) {
           value={formData.password}
           onChange={handleChange}
           type="password"
-          className="UserForm-input"
+          className="px-2 py-1 rounded-lg mb-2"
           required
         />
         {alerts.length > 0 && <Alerts alerts={alerts} />}
-        <button className="UserForm-button">Submit</button>
+        <button className="bg-[#a1d6e4] w-fit px-4 py-2 rounded-lg mt-2 ml-auto mr-auto">Submit</button>
       </form>
-    </>
+    </div>
   );
 }
 
