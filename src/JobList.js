@@ -38,19 +38,19 @@ function JobList() {
 
   return (
     <>
-      <h1 className="whiteWithShadow">Jobs</h1>
+      <h1 className="mb-4">Jobs</h1>
       <Searchbar searchType={"job"} search={searchJobs} />
       {isLoading === true ? (
         <Loading />
       ) : (
-        <>
-        {jobs.length === 0 && <h3 className="whiteWithShadow">Sorry, no
+        <div className="flex flex-col items-center">
+        {jobs.length === 0 && <h3 className="">Sorry, no
         jobs match: {currSearch}.</h3>}
 
         {jobs.map((j) => (
           <JobCard key={j.id} job={j} />
         ))}
-        </>
+        </div>
       )}
     </>
   );

@@ -17,7 +17,7 @@ function Homepage() {
   const currUser = useContext(userContext);
 
   return (
-    <div className="Homepage absolute border border-black border-solid w-full z-0 flex flex-col justify-center items-center">
+    <div className="Homepage absolute mt border border-black border-solid w-full z-0 flex flex-col justify-center items-center">
       <h1>Jobly</h1>
       {currUser ? (
         <h4 className="mt-10 text-lg">Welcome back, {currUser.username}!</h4>

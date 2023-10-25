@@ -1,4 +1,4 @@
-import './JobCard.css';
+// import './JobCard.css';
 
 /** Renders component containing job info.
  *
@@ -13,12 +13,17 @@ function JobCard({ job }) {
   const { title, companyName, salary, equity } = job;
 
   return (
-    <div className="JobCard">
-      <h3>{title}</h3>
-      {companyName && <h4>{companyName}</h4>}
+    <div className="JobCard bg-white mb-4 w-2/5 px-4 py-4 rounded-lg text-left">
+      <div className="flex justify-between items-center">
+        <div className="flex flex-col">
+        <h3 className="mb-1">{title}</h3>
+        {companyName && <h4>{companyName}</h4>}
       <div className="JobCard-detail">
-      {salary && <p>Salary: {salary.toLocaleString()}</p>}
-      {equity && <p>Equity: {equity}</p>}
+      {salary && <p className="mt-2"><b>Salary:</b> {salary.toLocaleString()}</p>}
+      {equity > 0 && <p><b>Equity:</b> {equity}</p>}
+        </div>
+      </div>
+      <div className="w-0.5 text-center border border-black border-solid py-2 px-6 rounded-lg ">Apply</div>
       </div>
     </div>
   )
