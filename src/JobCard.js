@@ -23,7 +23,7 @@ function JobCard({ job }) {
       {equity > 0 && <p><b>Equity:</b> {equity}</p>}
         </div>
       </div>
-      <button className="text-sm bg-blue-200 hover:bg-blue-300 border border-black border-solid py-2 px-6 rounded-lg ">Apply</button>
+      <button className="text-sm bg-[#a1d6e4] hover:border-none border border-black border-solid py-2 px-6 rounded-lg ">Apply</button>
       </div>
     </div>
   )
