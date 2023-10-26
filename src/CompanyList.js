@@ -36,7 +36,7 @@ function CompanyList() {
   }
 
   return (
-    <>
+    <div className="py-20">
       <h1 className="mb-4 text-3xl font-bold">Companies</h1>
       <Searchbar searchType={"company"} search={searchCompanies} />
       {isLoading === true ? (
@@ -51,7 +51,7 @@ function CompanyList() {
         ))}
         </div>
       )}
-    </>
+    </div>
   );
 }
 

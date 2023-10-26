@@ -30,7 +30,7 @@ function CompanyDetail() {
   }, []);
 
   return (
-    <>
+    <div className="py-20">
       {isLoading === true ? (
         <p>Loading...</p>
       ) : (
@@ -44,7 +44,7 @@ function CompanyDetail() {
           </div>
         </>
       )}
-    </>
+    </div>
   );
 }
 

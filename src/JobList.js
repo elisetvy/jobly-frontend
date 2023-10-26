@@ -37,7 +37,7 @@ function JobList() {
   }
 
   return (
-    <>
+    <div className="py-20">
       <h1 className="mb-4 text-3xl font-bold">Jobs</h1>
       <Searchbar searchType={"job"} search={searchJobs} />
       {isLoading === true ? (
@@ -52,7 +52,7 @@ function JobList() {
         ))}
         </div>
       )}
-    </>
+    </div>
   );
 }
 
