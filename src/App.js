@@ -11,12 +11,9 @@ import JoblyApi from "./api";
  *
  * Props: none
  *
- * State: currUser, currToken
+ * State: currUser, currToken, loadingUser
  *
- * Provides Context: userContext
- *
- * App -> Navbar/RoutesList
- */
+ * App -> NavBar / RoutesList */
 
 function App() {
   const [currUser, setCurrUser] = useState(null);
@@ -25,7 +22,7 @@ function App() {
   );
   const [loadingUser, setLoadingUser] = useState(true);
 
-  /** Updates currUser when currToken changes. */
+  /** Update currUser when currToken changes. */
   useEffect(
     function updateUserInfo() {
       async function getUserInfo() {
@@ -60,7 +57,7 @@ function App() {
     localStorage.setItem("token", token);
   }
 
-  /** Update a user. */
+  /** Update user. */
   async function update(updatedUser) {
     const updatedUserData = await JoblyApi.updateUser(
       currUser.username,

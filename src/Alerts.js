@@ -1,15 +1,10 @@
-// import "./Alerts.css";
-
-/** Component for rendering error messages.
+/** Render alerts (error and success messages).
  *
  * Props: alerts
  *
  * State: none
  *
- * Consumes Context: None
- *
- * LoginForm/SignupForm/ProfileForm -> Alerts
- */
+ * Login / Sign Up / Edit Profile -> Alerts */
 
 function Alerts({ alerts }) {
   const color = alerts[0].type === "success" ? "bg-green-200 text-green-600" : "bg-red-200 text-red-600";
