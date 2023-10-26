@@ -20,7 +20,7 @@ function JobCard({ job }) {
 
   return (
     <div className="JobCard bg-slate-100 mb-4 w-2/5 px-4 py-4 rounded-lg text-left">
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-start">
         <div className="flex flex-col">
         <h3 className="text-lg font-bold">{title}</h3>
         {companyName && <h4 className="font-bold">{companyName}</h4>}
@@ -29,7 +29,7 @@ function JobCard({ job }) {
       {equity > 0 && <p><b>Equity:</b> {equity}</p>}
         </div>
       </div>
-      <button onClick={applyToJob} className={`${applied === false ? "bg-slate-50" : "bg-yellow-200"} text-sm bg-slate-50 font-bold text-[#395fd0] hover:border-none border border-black border-solid py-2 px-6 rounded-lg`}>{applied === false ? "Apply" : "Applied"}</button>
+      <button onClick={applyToJob} className={`bg-[#395fd0] text-slate-50 mt-1 text-sm font-bold py-2 px-6 rounded-lg hover:opacity-50`}>{applied === false ? "Apply" : "Applied"}</button>
       </div>
     </div>
   )
