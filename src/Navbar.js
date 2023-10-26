@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import userContext from "./userContext";
+import logo from "./logo.png";
 // import "./Navbar.css";
 
 /**Component for top-level navigation between routes.
@@ -18,7 +19,8 @@ function Navbar({ logout }) {
 
   return (
     <nav className="Navbar flex justify-between px-6 py-4">
-      <div className="flex items-center">
+      <div className="flex items-center gap-2">
+        <img className="h-8 font-bold stroke-red-400" src={logo} alt="logo"/>
         <NavLink to="/" className="text-xl font-bold">Jobly</NavLink>
       </div>
       <div>
