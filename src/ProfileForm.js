@@ -107,7 +107,7 @@ function ProfileForm({ update }) {
           required
         />
         {alerts.length > 0 && <Alerts alerts={alerts} />}
-        <button className="bg-[#395fd0] font-bold text-slate-50 w-fit px-4 py-2 rounded-lg mt-2 ml-auto mr-auto"><b>Submit</b></button>
+        <button className="bg-[#395fd0] font-bold text-slate-50 w-fit px-4 py-2 rounded-lg mt-2 ml-auto mr-auto hover:opacity-50">Submit</button>
       </form>
     </div>
   );

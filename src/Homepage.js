@@ -27,16 +27,16 @@ function Homepage() {
         </>
       ) : (
         <>
-          <div className="h-[24rem] mt-10">
+          <div className="h-[24rem] mt-6">
             <dotlottie-player src="https://lottie.host/d4d11d45-53c0-49d0-a8a9-7adbd6526426/D8BzaHeAmF.json" background="transparent" speed="1" loop autoplay></dotlottie-player>
           </div>
           <h1 className="mt-6 font-bold text-3xl">All the jobs, all in one place.</h1>
-          <div className="flex gap-2 mt-6">
+          <div className="flex gap-2 mt-4">
             <Link to="/login">
-              <button className="bg-[#395fd0] font-bold text-slate-50 w-fit px-4 py-2 rounded-lg">Login</button>
+            <button className="bg-[#395fd0] font-bold text-slate-50 w-fit px-4 py-2 rounded-lg hover:opacity-50">Login</button>
             </Link>
             <Link to="/signup">
-              <button className="bg-[#395fd0] font-bold text-slate-50 w-fit px-4 py-2 rounded-lg">Signup</button>
+            <button className="bg-[#395fd0] font-bold text-slate-50 w-fit px-4 py-2 rounded-lg hover:opacity-50">Sign Up</button>
             </Link>
           </div>
         </>
