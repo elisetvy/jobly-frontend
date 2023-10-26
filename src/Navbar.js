@@ -19,9 +19,13 @@ function Navbar({ logout }) {
 
   return (
     <nav className="Navbar flex justify-between px-6 py-4">
-      <div className="flex items-center gap-2">
-        <img className="h-8 font-bold stroke-red-400" src={logo} alt="logo"/>
-        <NavLink to="/" className="text-xl font-bold">Jobly</NavLink>
+      <div className="flex items-center">
+        <NavLink to="/" className="text-xl font-bold flex items-center gap-2">
+        <div className="bg-[#395fd0] px-2 py-2 rounded-full">
+        <img className="h-6 invert" src={logo} alt="logo"/>
+        </div>
+        <div className="text-xl font-bold">Jobly</div>
+        </NavLink>
       </div>
       <div>
         {currUser && (
