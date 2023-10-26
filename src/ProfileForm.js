@@ -1,6 +1,5 @@
 import { useState, useContext } from "react";
 import userContext from "./userContext";
-// import "./UserForm.css";
 import Alerts from "./Alerts";
 
 /**Form for a logged in user to edit their profile.

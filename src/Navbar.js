@@ -2,7 +2,6 @@ import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import userContext from "./userContext";
 import logo from "./logo.png";
-// import "./Navbar.css";
 
 /**Component for top-level navigation between routes.
  *

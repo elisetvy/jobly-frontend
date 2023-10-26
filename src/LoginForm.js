@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import "./UserForm.css";
 import Alerts from "./Alerts";
 
 /**Form for logging in to Jobly App.

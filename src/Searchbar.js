@@ -1,6 +1,5 @@
 import { useState, useCallback } from "react";
 import debounce from "lodash.debounce";
-// import "./Searchbar.css";
 
 /** Reusable searchbar component for Jobly App.
  *

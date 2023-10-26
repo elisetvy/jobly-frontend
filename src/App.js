@@ -2,7 +2,6 @@ import { BrowserRouter } from "react-router-dom";
 import { useState, useEffect } from "react";
 import userContext from "./userContext";
 import jwtDecode from "jwt-decode";
-import "./App.css";
 import Loading from "./Loading";
 import Navbar from "./Navbar";
 import RoutesList from "./RoutesList";
