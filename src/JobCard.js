@@ -13,7 +13,7 @@ function JobCard({ job }) {
   const { title, companyName, salary, equity } = job;
 
   return (
-    <div className="JobCard bg-[#395fd0] text-slate-50 mb-4 w-2/5 px-4 py-4 rounded-lg text-left">
+    <div className="JobCard bg-slate-100 mb-4 w-2/5 px-4 py-4 rounded-lg text-left">
       <div className="flex justify-between items-center">
         <div className="flex flex-col">
         <h3 className="text-lg font-bold">{title}</h3>

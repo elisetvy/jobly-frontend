@@ -35,11 +35,13 @@ function CompanyDetail() {
         <p>Loading...</p>
       ) : (
         <>
-          <h3 className="whiteWithShadow">{company.name}</h3>
-          <p className="whiteWithShadow">{company.description}</p>
-          {company.jobs.map((j) => (
-            <JobCard key={uuid()} job={j} />
-          ))}
+          <h3 className="text-lg font-bold">{company.name}</h3>
+          <p className="">{company.description}</p>
+          <div className="mt-4 w-screen flex flex-col items-center">
+            {company.jobs.map((j) => (
+              <JobCard key={uuid()} job={j} />
+            ))}
+          </div>
         </>
       )}
     </>

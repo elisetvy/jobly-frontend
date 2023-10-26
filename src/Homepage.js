@@ -20,14 +20,14 @@ function Homepage() {
     <div className="Homepage w-full flex flex-col justify-center items-center">
       {currUser ? (
         <>
-          <div className="h-72 mt-20">
+          <div className="h-[24rem] mt-10">
             <dotlottie-player src="https://lottie.host/d4d11d45-53c0-49d0-a8a9-7adbd6526426/D8BzaHeAmF.json" background="transparent" speed="1" loop autoplay></dotlottie-player>
           </div>
           <h4 className="mt-4 text-3xl font-bold">Welcome back, {currUser.firstName[0].toUpperCase() + currUser.firstName.slice(1)}!</h4>
         </>
       ) : (
         <>
-          <div className="h-72 mt-20">
+          <div className="h-[24rem] mt-10">
             <dotlottie-player src="https://lottie.host/d4d11d45-53c0-49d0-a8a9-7adbd6526426/D8BzaHeAmF.json" background="transparent" speed="1" loop autoplay></dotlottie-player>
           </div>
           <h1 className="mt-6 font-bold text-3xl">All the jobs, all in one place.</h1>
