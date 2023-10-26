@@ -17,18 +17,21 @@ function Homepage() {
   const currUser = useContext(userContext);
 
   return (
-    <div className="Homepage border-2 border-black border-solid w-full z-0 flex flex-col justify-center items-center">
-      <h1 className="font-bold text-5xl">Jobly</h1>
+    <div className="Homepage w-full flex flex-col justify-center items-center">
       {currUser ? (
+        <>
+        <h1 className="mt-52 font-bold text-5xl">Jobly</h1>
         <h4 className="mt-4 text-xl">Welcome back, {currUser.firstName}!</h4>
+        </>
       ) : (
         <>
-          <div>
+          <h1 className="mt-52 font-bold text-3xl">Your dream job is calling. Ready to pick up?</h1>
+          <div className="flex gap-2 mt-6">
             <Link to="/login">
-              <button>Login</button>
+              <button className="bg-[#395fd0] font-bold text-slate-50 w-fit px-4 py-2 rounded-lg">Login</button>
             </Link>
             <Link to="/signup">
-              <button>Signup</button>
+              <button className="bg-[#395fd0] font-bold text-slate-50 w-fit px-4 py-2 rounded-lg">Signup</button>
             </Link>
           </div>
         </>

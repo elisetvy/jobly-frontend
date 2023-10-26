@@ -13,7 +13,7 @@ function JobCard({ job }) {
   const { title, companyName, salary, equity } = job;
 
   return (
-    <div className="JobCard bg-white mb-4 w-2/5 px-4 py-4 rounded-lg text-left">
+    <div className="JobCard bg-[#395fd0] text-slate-50 mb-4 w-2/5 px-4 py-4 rounded-lg text-left">
       <div className="flex justify-between items-center">
         <div className="flex flex-col">
         <h3 className="text-lg font-bold">{title}</h3>
@@ -23,7 +23,7 @@ function JobCard({ job }) {
       {equity > 0 && <p><b>Equity:</b> {equity}</p>}
         </div>
       </div>
-      <button className="text-sm bg-[#a1d6e4] hover:border-none border border-black border-solid py-2 px-6 rounded-lg ">Apply</button>
+      <button className="text-sm bg-slate-50 font-bold text-[#395fd0] hover:border-none border border-black border-solid py-2 px-6 rounded-lg ">Apply</button>
       </div>
     </div>
   )

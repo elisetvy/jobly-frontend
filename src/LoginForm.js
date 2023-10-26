@@ -49,7 +49,7 @@ function LoginForm({ login }) {
   return (
     <div className="w-screen flex flex-col items-center">
       <h1 className="mb-4 text-3xl font-bold">Login</h1>
-      <form onSubmit={handleSubmit} className="flex flex-col w-1/4 bg-stone-100 px-6 py-6 rounded-lg">
+      <form onSubmit={handleSubmit} className="flex flex-col w-1/4 bg-slate-100 px-6 py-6 rounded-lg">
         <label htmlFor="username" className="text-left px-1 mt-2 font-bold">
           Username
         </label>
@@ -75,7 +75,7 @@ function LoginForm({ login }) {
           required
         />
         {alerts.length > 0 && <Alerts alerts={alerts} />}
-        <button className="bg-[#a1d6e4] w-fit px-4 py-2 rounded-lg mt-2 ml-auto mr-auto">Submit</button>
+        <button className="bg-[#395fd0] font-bold text-slate-50 w-fit px-4 py-2 rounded-lg mt-2 ml-auto mr-auto">Submit</button>
       </form>
     </div>
   );

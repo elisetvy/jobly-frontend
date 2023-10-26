@@ -57,7 +57,7 @@ function ProfileForm({ update }) {
   return (
     <div className="w-screen flex flex-col items-center">
       <h1 className="mb-4 text-3xl font-bold">Edit Profile</h1>
-      <form onSubmit={handleSubmit} className="flex flex-col w-1/4 bg-stone-100 px-6 py-6 rounded-lg">
+      <form onSubmit={handleSubmit} className="flex flex-col w-1/4 bg-slate-100 px-6 py-6 rounded-lg">
         <label htmlFor="username" className="text-left px-1 mt-2 font-bold">
           Username
         </label>
@@ -67,7 +67,7 @@ function ProfileForm({ update }) {
           value={formData.username}
           onChange={handleChange}
           type="text"
-          className="px-2 py-1 rounded-lg mb-2 bg-[#a1d6e4] opacity-50"
+          className="px-2 py-1 rounded-lg mb-2 bg-indigo-100 opacity-50"
           disabled
         />
         <label htmlFor="firstName" className="text-left px-1 mt-2 font-bold">
@@ -107,7 +107,7 @@ function ProfileForm({ update }) {
           required
         />
         {alerts.length > 0 && <Alerts alerts={alerts} />}
-        <button className="bg-[#a1d6e4] w-fit px-4 py-2 rounded-lg mt-2 ml-auto mr-auto"><b>Submit</b></button>
+        <button className="bg-[#395fd0] font-bold text-slate-50 w-fit px-4 py-2 rounded-lg mt-2 ml-auto mr-auto"><b>Submit</b></button>
       </form>
     </div>
   );

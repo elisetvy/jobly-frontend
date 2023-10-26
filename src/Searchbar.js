@@ -40,7 +40,7 @@ function Searchbar({ searchType, search }) {
         value={formData}
         placeholder={`Search for a ${searchType}...`}
         onChange={handleChange}
-        className="Searchbar-input px-2 py-2 w-1/5 border border-black border rounded-lg mb-4"
+        className="Searchbar-input px-2 py-2 w-1/4 border border-black border rounded-lg mb-4"
       ></input>
     </form>
   );

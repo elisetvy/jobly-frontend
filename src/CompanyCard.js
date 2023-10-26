@@ -18,7 +18,7 @@ function CompanyCard({ company }) {
 
   return (
       <Link to={`/companies/${handle}`} className="w-2/5">
-    <div className="CompanyCard flex gap-x-4 justify-between bg-white mb-4 px-4 py-4 rounded-lg text-left">
+    <div className="CompanyCard flex gap-x-4 justify-between bg-[#395fd0] text-slate-50 mb-4 px-4 py-4 rounded-lg text-left">
         <div className="CompanyCard-detail flex flex-col">
           <h3 className="text-lg font-bold">{name}</h3>
           <p>{description}</p>
