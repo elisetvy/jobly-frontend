@@ -1,3 +1,4 @@
+import { useState } from 'react';
 // import './JobCard.css';
 
 /** Renders component containing job info.
@@ -11,6 +12,11 @@
 
 function JobCard({ job }) {
   const { title, companyName, salary, equity } = job;
+  const [ applied, setApplied ] = useState(false);
+
+  function applyToJob() {
+    setApplied(prev => !prev);
+  }
 
   return (
     <div className="JobCard bg-slate-100 mb-4 w-2/5 px-4 py-4 rounded-lg text-left">
@@ -23,7 +29,7 @@ function JobCard({ job }) {
       {equity > 0 && <p><b>Equity:</b> {equity}</p>}
         </div>
       </div>
-      <button className="text-sm bg-slate-50 font-bold text-[#395fd0] hover:border-none border border-black border-solid py-2 px-6 rounded-lg ">Apply</button>
+      <button onClick={applyToJob} className={`${applied === false ? "bg-slate-50" : "bg-yellow-200"} text-sm bg-slate-50 font-bold text-[#395fd0] hover:border-none border border-black border-solid py-2 px-6 rounded-lg`}>{applied === false ? "Apply" : "Applied"}</button>
       </div>
     </div>
   )
