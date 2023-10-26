@@ -1,20 +1,18 @@
 import { useState, useCallback } from "react";
 import debounce from "lodash.debounce";
 
-/** Reusable searchbar component for Jobly App.
+/** Search bar (live search).
  *
  * Props: searchType, search (fn)
  *
  * State: formData
  *
- * Consumes Context: None
- *
- * CompanyList/JobsList -> SearchBar
- */
+ * CompanyList / JobsList -> SearchBar */
+
 function Searchbar({ searchType, search }) {
   const [formData, setFormData] = useState("");
 
-  /**Executes search function after 500ms delay */
+  /** Execute search function after 500ms delay. */
   const debouncedFetchData = useCallback(
     debounce((formData) => {
       search(formData);
@@ -22,13 +20,13 @@ function Searchbar({ searchType, search }) {
     []
   );
 
-  /**Update state based on change in form input */
+  /** Update state based on change in form input. */
   function handleChange(evt) {
     setFormData(evt.target.value);
     debouncedFetchData(evt.target.value.trim(), 500);
   }
 
-  /**Prevents page from reloading on submission */
+  /** Prevent page from reloading on submission. */
   function handleSubmit(evt) {
     evt.preventDefault();
   }

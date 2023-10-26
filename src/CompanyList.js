@@ -4,20 +4,20 @@ import Searchbar from "./Searchbar";
 import CompanyCard from "./CompanyCard";
 import Loading from "./Loading";
 
-/** Renders CompanyList component containing CompanyCards.
+/** Render company list.
  *
  * Props: none
  *
- * State: companies, isLoading
+ * State: companies, isLoading, currSearch
  *
- * App -> CompanyList -> CompanyCard(s)
- */
+ * App -> CompanyList -> CompanyCard */
+
 function CompanyList() {
   const [companies, setCompanies] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [currSearch, setCurrSearch] = useState("");
 
-  /**Loads company data on initial render of the component */
+  /** Load company data on initial render. */
   useEffect(function getCompaniesOnRender() {
     searchCompanies();
   }, []);

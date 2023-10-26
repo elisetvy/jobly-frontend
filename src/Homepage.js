@@ -1,18 +1,15 @@
-// import "./Homepage.css";
+import { useContext } from "react";
 import userContext from "./userContext";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
 
-/**Landing page for Jobly.
+/** Landing page.
  *
  * Props: none
  *
  * State: none
  *
- * Consumes Context: userContext
- *
- *App -> Homepage
- */
+ * App -> Homepage */
+
 function Homepage() {
   const currUser = useContext(userContext);
 

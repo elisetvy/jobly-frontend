@@ -1,26 +1,23 @@
 import { useState, useEffect } from "react";
 import JobCard from "./JobCard";
 import Searchbar from "./Searchbar";
-
 import JoblyApi from "./api";
 import Loading from "./Loading";
 
-/**Component listing jobs in JoblyAPI as <JobCards />.
+/** Render job list.
  *
  * Props: none
  *
- * State: jobs, isLoading
+ * State: jobs, isLoading, currSearch
  *
- * Consumes Context: None
- *
- * App -> JobList
- */
+ * App -> JobList -> JobCard */
+
 function JobList() {
   const [jobs, setJobs] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [currSearch, setCurrSearch] = useState("");
 
-  /**Loads jobs data on initial render */
+  /** Load job data on initial render. */
   useEffect(function getJobsOnRender() {
     searchJobs();
   }, []);

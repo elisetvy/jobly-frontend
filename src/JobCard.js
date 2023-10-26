@@ -1,14 +1,12 @@
 import { useState } from 'react';
-// import './JobCard.css';
 
-/** Renders component containing job info.
+/** Render card containing job info.
  *
  * Props: job
  *
- * State: none
+ * State: applied
  *
- * App -> JobList / CompanyDetail -> JobCard
- */
+ * App -> JobList / CompanyDetail -> JobCard */
 
 function JobCard({ job }) {
   const { title, companyName, salary, equity } = job;

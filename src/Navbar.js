@@ -3,16 +3,14 @@ import { useContext } from "react";
 import userContext from "./userContext";
 import logo from "./logo.png";
 
-/**Component for top-level navigation between routes.
+/** Navigation bar.
  *
  * Props: logout (fn)
  *
- * State: None
+ * State: none
  *
- * Consumes Context: userContext
- *
- * App -> NavBar
- */
+ * App -> NavBar */
+
 function Navbar({ logout }) {
   const currUser = useContext(userContext);
 

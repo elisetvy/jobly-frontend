@@ -2,13 +2,13 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Alerts from "./Alerts";
 
-/**Form for new users to signup in Jobly.
+/** Form to sign up.
  *
  * Props: signup (fn)
  *
  * State: formData, alerts
  *
- * RoutesList -> Signupform
+ * RoutesList -> SignupForm
  */
 
 function SignupForm({ signup }) {
@@ -27,15 +27,13 @@ function SignupForm({ signup }) {
 
   const navigate = useNavigate();
 
-  /**Updates state based on form input change */
+  /**Update state based on form input change. */
   function handleChange(evt) {
     const { name, value } = evt.target;
     setFormData((fData) => ({ ...fData, [name]: value }));
   }
 
-  /**Handles form submission. Redirects to home on success, renders error
-   * alerts with invalid signup info.
-   */
+  /** Handle form submission. Redirect to home on success / render alert with error(s). */
   async function handleSubmit(evt) {
     evt.preventDefault();
     try {

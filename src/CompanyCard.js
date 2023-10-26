@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
 
-/** Renders component containing company info.
+/** Render card containing company info.
  *
  * Props: company
  *
  * State: none
  *
- * App -> CompanyList -> CompanyCard
- */
+ * App -> CompanyList -> CompanyCard */
 
 function CompanyCard({ company }) {
   const { name, description, logoUrl, handle } = company;

@@ -2,16 +2,14 @@ import { useState, useContext } from "react";
 import userContext from "./userContext";
 import Alerts from "./Alerts";
 
-/**Form for a logged in user to edit their profile.
+/** Form for a logged in user to edit their profile.
  *
  * Props: update (fn)
  *
  * State: formData, alerts
  *
- * Consumes Context: userContext
- *
- * RoutesList -> ProfileForm
- */
+ * RoutesList -> ProfileForm */
+
 function ProfileForm({ update }) {
   const currUser = useContext(userContext);
 
@@ -27,15 +25,13 @@ function ProfileForm({ update }) {
     type: "",
   });
 
-  /**Updates state based on form input change */
+  /** Update state based on form input change. */
   function handleChange(evt) {
     const { name, value } = evt.target;
     setFormData((fData) => ({ ...fData, [name]: value }));
   }
 
-  /**Handles form submission. Redirects to home on success, renders error
-   * alerts with invalid signup info.
-   */
+  /** Handle form submission. Render alert with success / error message. */
   async function handleSubmit(evt) {
     evt.preventDefault();
     try {

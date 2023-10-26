@@ -2,16 +2,13 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Alerts from "./Alerts";
 
-/**Form for logging in to Jobly App.
+/** Form for logging in.
  *
- * Props: Login (fn)
+ * Props: login (fn)
  *
  * State: formData, alerts
  *
- * Consumes Context: None
- *
- * App -> RouteList -> LoginForm
- */
+ * App -> RouteList -> LoginForm */
 
 function LoginForm({ login }) {
   const [formData, setFormData] = useState({
@@ -26,15 +23,13 @@ function LoginForm({ login }) {
 
   const navigate = useNavigate();
 
-  /**Updates state based on form input change */
+  /** Update state based on form input change. */
   function handleChange(evt) {
     const { name, value } = evt.target;
     setFormData((fData) => ({ ...fData, [name]: value }));
   }
 
-  /**Handles form submission. Redirects to home on success, renders error
-   * alerts with invalid credentials.
-   */
+  /** Handle form submission. Redirect to home on success / render alert with invalid credentials. */
   async function handleSubmit(evt) {
     evt.preventDefault();
     try {

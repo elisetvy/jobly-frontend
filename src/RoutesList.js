@@ -1,7 +1,6 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import userContext from "./userContext";
 import { useContext } from "react";
-
 import Homepage from "./Homepage";
 import LoginForm from "./LoginForm";
 import SignupForm from "./SignupForm";
@@ -13,14 +12,11 @@ import Loading from "./Loading";
 
 /** Component for defining routes.
  *
- * Props: login, signup
+ * Props: login (fn), signup (fn)
  *
  * State: none
  *
- * Consumes Context: userContext
- *
- * App -> RoutesList
- */
+ * App -> RoutesList */
 
 function RoutesList({ login, signup, update }) {
   const currUser = useContext(userContext);

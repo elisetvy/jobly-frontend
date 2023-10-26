@@ -4,14 +4,13 @@ import { v4 as uuid } from "uuid";
 import JoblyApi from "./api";
 import JobCard from "./JobCard";
 
-/**Component representing an individual company and its jobs.
+/** Render company info and job list.
  *
  * Props: none
  *
  * State: company, isLoading
  *
- * CompanyList -> CompanyDetails
- */
+ * CompanyList -> CompanyDetail -> JobCard */
 
 function CompanyDetail() {
   const { handle } = useParams();
