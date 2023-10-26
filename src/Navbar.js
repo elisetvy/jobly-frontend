@@ -20,7 +20,6 @@ function Navbar({ logout }) {
     <nav className="Navbar flex justify-between px-6 py-4">
       <div className="flex items-center">
         <NavLink to="/" className="text-xl font-bold">Jobly</NavLink>
-        <em className="ml-12 text-md">All the jobs, all in one place.</em>
       </div>
       <div>
         {currUser && (
