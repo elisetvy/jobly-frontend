@@ -18,7 +18,7 @@ function Navbar({ logout }) {
   const currUser = useContext(userContext);
 
   return (
-    <nav className="Navbar flex justify-between px-6 py-4">
+    <nav className="Navbar flex items-center justify-between px-6 py-4">
       <div className="flex items-center">
         <NavLink to="/" className="text-xl font-bold flex items-center gap-2">
         <div className="bg-[#395fd0] px-2 py-2 rounded-full">
