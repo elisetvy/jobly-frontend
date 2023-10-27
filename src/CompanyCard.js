@@ -15,7 +15,7 @@ function CompanyCard({ company }) {
   logoUrl === null ? (isVisible = "hidden") : (isVisible = "visible");
 
   return (
-    <Link to={`/companies/${handle}`} className="w-2/5">
+    <Link to={`/companies/${handle}`} className="min-w-[400px] w-2/5">
       <div className="CompanyCard hover:scale-105 flex gap-x-4 justify-between bg-slate-100 mb-4 px-4 py-4 rounded-lg text-left">
           <div className="CompanyCard-detail flex flex-col">
             <h3 className="text-lg font-bold">{name}</h3>

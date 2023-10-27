@@ -17,7 +17,7 @@ function JobCard({ job }) {
   }
 
   return (
-    <div className="JobCard bg-slate-100 mb-4 w-2/5 px-4 py-4 rounded-lg text-left">
+    <div className="JobCard bg-slate-100 mb-4 min-w-[400px] w-2/5 px-4 py-4 rounded-lg text-left">
       <div className="flex justify-between items-start">
         <div className="flex flex-col">
         <h3 className="text-lg font-bold">{title}</h3>
