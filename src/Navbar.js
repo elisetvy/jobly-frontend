@@ -27,19 +27,13 @@ function Navbar({ logout }) {
       <div>
         {currUser && (
           <div className="flex">
-            <NavLink to="/companies" className="font-bold hover:scale-105" style={({ isActive }) => ({ textDecoration: isActive ? "underline" : "none", textUnderlineOffset: "0.25rem" })}>Companies</NavLink>
-            <NavLink to="/jobs"className="ml-6 font-bold hover:scale-105" style={({ isActive }) => ({ textDecoration: isActive ? "underline" : "none", textUnderlineOffset: "0.25rem" })}>Jobs</NavLink>
-            <NavLink to="/profile" className="ml-6 font-bold hover:scale-105" style={({ isActive }) => ({ textDecoration: isActive ? "underline" : "none", textUnderlineOffset: "0.25rem" })}>Profile</NavLink>
+            <NavLink to="/companies" className="font-bold hover:scale-110" style={({ isActive }) => ({ textDecoration: isActive ? "underline" : "none", textUnderlineOffset: "0.25rem" })}>Companies</NavLink>
+            <NavLink to="/jobs"className="ml-6 font-bold hover:scale-110" style={({ isActive }) => ({ textDecoration: isActive ? "underline" : "none", textUnderlineOffset: "0.25rem" })}>Jobs</NavLink>
+            <NavLink to="/profile" className="ml-6 font-bold hover:scale-110" style={({ isActive }) => ({ textDecoration: isActive ? "underline" : "none", textUnderlineOffset: "0.25rem" })}>Profile</NavLink>
             <button onClick={logout} className="Navbar-logout ml-6 italic">
               Log Out
             </button>
           </div>
-        )}
-        {!currUser && (
-          <>
-            <NavLink to="/login" className="ml-6 font-bold hover:underline">Login</NavLink>
-            <NavLink to="/signup" className="ml-6 font-bold hover:underline">Sign Up</NavLink>
-          </>
         )}
       </div>
     </nav>
