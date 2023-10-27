@@ -27,10 +27,10 @@ function Navbar({ logout }) {
       <div>
         {currUser && (
           <div className="flex">
-            <NavLink to="/companies" className="font-bold ">Companies</NavLink>
-            <NavLink to="/jobs"className="ml-6 font-bold">Jobs</NavLink>
-            <NavLink to="/profile" className="ml-6 font-bold">Profile</NavLink>
-            <button onClick={logout} className="Navbar-logout ml-6 italic hover:underline">
+            <NavLink to="/companies" className="font-bold hover:underline">Companies</NavLink>
+            <NavLink to="/jobs"className="ml-6 font-bold hover:underline">Jobs</NavLink>
+            <NavLink to="/profile" className="ml-6 font-bold hover:underline" >Profile</NavLink>
+            <button onClick={logout} className="Navbar-logout ml-6 italic">
               Logout {currUser.username}
             </button>
           </div>
