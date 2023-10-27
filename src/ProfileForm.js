@@ -51,7 +51,7 @@ function ProfileForm({ update }) {
 
   return (
     <div className="h-screen flex flex-col justify-center items-center">
-      <h1 className="mb-4 text-3xl font-bold">Edit Profile</h1>
+      <h1 className="mb-4 text-3xl font-bold">Profile</h1>
       <form onSubmit={handleSubmit} className="flex flex-col w-1/4 min-w-[350px] bg-slate-100 px-6 py-6 rounded-lg">
         <label htmlFor="username" className="text-left px-1 mt-2 font-bold">
           Username
@@ -102,7 +102,7 @@ function ProfileForm({ update }) {
           required
         />
         {alerts.length > 0 && <Alerts alerts={alerts} />}
-        <button className="bg-[#395fd0] font-bold text-slate-50 w-fit px-4 py-2 rounded-lg mt-2 ml-auto mr-auto hover:scale-105">Submit</button>
+        <button className="bg-[#395fd0] font-bold text-slate-50 w-fit px-4 py-2 rounded-lg mt-2 ml-auto mr-auto hover:scale-105">Save</button>
       </form>
     </div>
   );
