@@ -79,7 +79,7 @@ function App() {
   }
 
   return (
-    <div className="App relative">
+    <div className="App relative text-center">
       <userContext.Provider value={currUser}>
         <BrowserRouter>
           <Navbar logout={logout} />
