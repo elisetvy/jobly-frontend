@@ -27,7 +27,7 @@ function JobCard({ job }) {
       {equity > 0 && <p><b>Equity:</b> {equity}</p>}
         </div>
       </div>
-      <button onClick={applyToJob} className={`bg-[#395fd0] text-slate-50 mt-1 text-sm font-bold py-2 px-6 rounded-lg hover:opacity-50`}>{applied === false ? "Apply" : "Applied"}</button>
+      <button onClick={applyToJob} className={`bg-[#395fd0] text-slate-50 mt-1 text-sm font-bold py-2 px-6 rounded-lg hover:scale-105`}>{applied === false ? "Apply" : "Applied"}</button>
       </div>
     </div>
   )
