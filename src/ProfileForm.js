@@ -52,7 +52,7 @@ function ProfileForm({ update }) {
   return (
     <div className="h-screen flex flex-col justify-center items-center">
       <h1 className="mb-4 text-3xl font-bold">Edit Profile</h1>
-      <form onSubmit={handleSubmit} className="flex flex-col w-1/4 bg-slate-100 px-6 py-6 rounded-lg">
+      <form onSubmit={handleSubmit} className="flex flex-col w-1/4 min-w-[350px] bg-slate-100 px-6 py-6 rounded-lg">
         <label htmlFor="username" className="text-left px-1 mt-2 font-bold">
           Username
         </label>
