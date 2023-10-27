@@ -30,10 +30,10 @@ function Homepage() {
           <h1 className="font-bold text-3xl">All the jobs, all in one place.</h1>
           <div className="flex gap-2 mt-6">
             <Link to="/login">
-            <button className="bg-[#395fd0] font-bold text-slate-50 w-fit px-4 py-2 rounded-lg hover:opacity-50">Login</button>
+            <button className="bg-[#395fd0] font-bold text-slate-50 w-fit px-4 py-2 rounded-lg hover:scale-105">Login</button>
             </Link>
             <Link to="/signup">
-            <button className="bg-[#395fd0] font-bold text-slate-50 w-fit px-4 py-2 rounded-lg hover:opacity-50">Sign Up</button>
+            <button className="bg-[#395fd0] font-bold text-slate-50 w-fit px-4 py-2 rounded-lg hover:scale-105">Sign Up</button>
             </Link>
           </div>
         </div>

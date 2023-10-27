@@ -17,7 +17,7 @@ function Navbar({ logout }) {
   return (
     <nav className="Navbar w-screen flex items-center justify-between px-6 py-4 fixed">
       <div className="flex items-center">
-        <NavLink to="/" className="text-xl font-bold flex items-center gap-2">
+        <NavLink to="/" className="text-xl font-bold flex items-center gap-2 hover:scale-105">
         <div className="bg-[#395fd0] px-2 py-2 rounded-full">
         <img className="h-6 invert" src={logo} alt="logo"/>
         </div>
@@ -31,14 +31,14 @@ function Navbar({ logout }) {
             <NavLink to="/jobs"className="ml-6 font-bold hover:underline">Jobs</NavLink>
             <NavLink to="/profile" className="ml-6 font-bold hover:underline" >Profile</NavLink>
             <button onClick={logout} className="Navbar-logout ml-6 italic">
-              Logout {currUser.username}
+              Log Out
             </button>
           </div>
         )}
         {!currUser && (
           <>
-            <NavLink to="/login" className="ml-6 font-bold">Login</NavLink>
-            <NavLink to="/signup" className="ml-6 font-bold">Signup</NavLink>
+            <NavLink to="/login" className="ml-6 font-bold hover:underline">Login</NavLink>
+            <NavLink to="/signup" className="ml-6 font-bold hover:underline">Sign Up</NavLink>
           </>
         )}
       </div>
