@@ -1,7 +1,7 @@
 ### Live demo
 - https://elise-jobly.surge.sh/
 
-### Created with
+### Built with
 - JavaScript, React, Express, Tailwind CSS
 
 ### Current features
